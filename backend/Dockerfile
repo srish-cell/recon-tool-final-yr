@@ -9,6 +9,11 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends nmap \
     ca-certificates \
     apt-transport-https \
+    dnsenum \
+    snmp \
+    netdiscover \
+    arp-scan \
+    sublist3r \
     gnupg \
     wget \
     software-properties-common && \

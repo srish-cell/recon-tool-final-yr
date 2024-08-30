@@ -3,6 +3,8 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from scripts.nmap import nmapscan
+from scripts.dnsenum import dnsenumscan
+from scripts.sublist import sublist3r
 
 app = Flask(__name__)
 CORS(app)
@@ -14,6 +16,10 @@ def scan():
         return jsonify({"error": "Target is required"}), 400
 
     output = nmapscan(target)
+    output += dnsenumscan(target)
+    s=sublist3r(target)
+    output+=s
+    output+=
     return jsonify({"output": output})
 
 if __name__ == "__main__":

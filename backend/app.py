@@ -5,6 +5,7 @@ from flask_cors import CORS
 from scripts.nmap import nmapscan
 from scripts.dnsenum import dnsenumscan
 from scripts.sublist import sublist3r
+from scripts.shodan import resolve_domain, lookup_host
 
 app = Flask(__name__)
 CORS(app)
@@ -19,7 +20,7 @@ def scan():
     output += dnsenumscan(target)
     s=sublist3r(target)
     output+=s
-    output+=
+    output+=lookup_host(resolve_domain(target))
     return jsonify({"output": output})
 
 if __name__ == "__main__":

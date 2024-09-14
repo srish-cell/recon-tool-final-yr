@@ -11,9 +11,10 @@ const Navbar = () => {
         <li><Link to='Programs' smooth={true} offset={-260} duration={500}>Test</Link></li>
         <li><Link to='Test' smooth={true} offset={-260} duration={500}>Info</Link></li>
         <li><Link to='About' smooth={true} offset={-260} duration={500}>Contact us</Link></li>
-        
+        <li><Link> <button> Create Account</button></Link></li>
 
       </ul>
+      
     </nav>
   )
 }
